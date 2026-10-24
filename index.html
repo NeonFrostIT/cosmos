@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080d25">
+  <meta name="description" content="ORBIT QUEST — исследуй 8 планет, найди 2 кристалла и ответь на 2 вопроса на каждой планете.">
+  <title>Космическая экспедиция</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main id="game" aria-label="Игра ORBIT QUEST">
+    <canvas id="scene" aria-label="Космическая планета, космонавт, кристаллы и учёный"></canvas>
+    <div class="vignette" aria-hidden="true"></div>
+
+    <div class="hud">
+      <header class="top-bar">
+        <div class="brand"><span class="brand-logo" aria-hidden="true">✦</span><span><strong>МИССИЯ САНЖАРА</strong><small>КОСМИЧЕСКАЯ ЭКСПЕДИЦИЯ</small></span></div>
+        <div class="planet-heading"><span id="planetNumber">01 / 08</span><strong id="planetTitle">Меркурий</strong><span id="planetCrystals">◇ 0 / 2</span></div>
+        <div class="top-buttons">
+          <button class="icon-button" type="button" id="mapButton" title="Карта планет" aria-label="Карта планет">🪐</button>
+          <button class="icon-button" type="button" id="soundButton" title="Включить звук" aria-label="Включить звук">🔇</button>
+          <button class="icon-button" type="button" id="helpButton" title="Как играть" aria-label="Как играть">?</button>
+        </div>
+      </header>
+
+      <div class="tagline" id="planetTagline">Найди два кристалла на планете</div>
+
+      <section class="bottom-bar">
+        <div class="dpad" aria-label="Управление движением">
+          <button class="pad pad-up" data-direction="up" aria-label="Вверх" type="button">▲</button>
+          <button class="pad pad-left" data-direction="left" aria-label="Влево" type="button">◀</button>
+          <button class="pad pad-right" data-direction="right" aria-label="Вправо" type="button">▶</button>
+          <button class="pad pad-down" data-direction="down" aria-label="Вниз" type="button">▼</button>
+        </div>
+        <div class="action-panel">
+          <div class="action-eyebrow" id="missionStep">МИССИЯ · 0 ИЗ 2</div>
+          <div class="action-title" id="missionTitle">Найди кристалл</div>
+          <p id="missionHint">Подойди к светящемуся кристаллу</p>
+          <button class="action-button" id="interactButton" type="button">Подойди к объекту</button>
+        </div>
+      </section>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    </div>
+
+    <div class="dialog-overlay" id="dialogOverlay" hidden>
+      <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialogTitle">
+        <div class="dialog-header">
+          <div><h2 id="dialogTitle">Задание</h2><p id="dialogSubtitle"></p></div>
+          <button class="close-button" id="closeDialog" type="button" aria-label="Закрыть">✕</button>
+        </div>
+        <div class="dialog-body" id="dialogBody"></div>
+        <div class="dialog-footer" id="dialogFooter"></div>
+      </div>
+    </div>
+    <div class="flight-banner" id="flightBanner" hidden aria-live="polite">🚀 Полёт к следующей планете</div>
+    <div class="portrait-hint" aria-live="polite"><div>📱 ↻</div><strong>Поверни телефон горизонтально</strong><p>Игра рассчитана на альбомную ориентацию.</p></div>
+  </main>
+</body>
+</html>
