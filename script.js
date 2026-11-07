@@ -201,7 +201,7 @@
     if(!completed())return;
     openDialog('rocket',saveState.planet===7?'🏆 Миссия выполнена!':'Ракета готова!',saveState.planet===7?'Все восемь планет исследованы':'Оба кристалла собраны, оба вопроса решены');
     ui.body.appendChild(textNode('div',saveState.planet===7?'🌟 🏆 🌟':'🚀','rocket-preview'));
-    ui.body.appendChild(textNode('p',saveState.planet===7?'Поздравляем! Ты прошёл МИССИЮ САНЖАРА.':'Следующая остановка: '+PLANETS[saveState.planet+1].name+'.'));
+    ui.body.appendChild(textNode('p',saveState.planet===7?'Поздравляем! Ты прошёл КОСМИЧЕСКАЯ ЭКСПЕДИЦИЯ.':'Следующая остановка: '+PLANETS[saveState.planet+1].name+'.'));
     if(saveState.planet!==7){
       addFooter('Начать полёт 🚀',startFlight);
     }else addFooter('Посмотреть карту',openMap);
