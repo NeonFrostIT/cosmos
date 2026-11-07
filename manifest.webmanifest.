@@ -1,0 +1,12 @@
+{
+  "id": "./",
+  "name": "ORBIT QUEST",
+  "short_name": "ORBIT",
+  "description": "Explore planets, collect crystals and test your knowledge!",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#101629",
+  "theme_color": "#101629"
+}
